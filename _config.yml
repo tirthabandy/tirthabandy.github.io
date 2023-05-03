@@ -1,0 +1,2 @@
+http_header:
+  Content-Security-Policy: "frame-src https://*"
