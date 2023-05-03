@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.coolwebtemplates.net
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tirthankar Bandyopadhyay</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="./style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="./js/cufon-yui.js"></script>
+<script type="text/javascript" src="./js/arial.js"></script>
+<script type="text/javascript" src="./js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+
+
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html"><span>Tirthankar Bandyopadhyay</span> </a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="research.html">Research</a></li>
+          <li class="active"><a href="projects.html">Projects</a></li>
+          <li><a href="publication.html">Publications</a></li>          
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+	
+  	<div class="content">
+	<div class="content_resize">
+		<div class="mainbar">
+			<div class="article">
+
+		<h2> Autonomy for Mobility on Demand Systems   </h2>
+		   
+		
+		
+		
+		<table align="center">
+		<tr>
+		<td align="center"><img src="./www/research/AutoMoD/vehicleconfiguration.png" height="320" alt="" /> </td>
+		</tr>
+		<tr> 
+		<td align="center">Our current configuration of the autonomous mobility platform.</td>		
+		</tr>
+		</table>
+
+		<h3>Autonomous Platform </h3>
+		Our autonomous platform  is a modified drive-by-wire Yamaha G22E golf car mounted with various sensors with a minimalistic approach in mind. It can carry  two passengers including the safety driver at the maximum speed of 24 kmph.  
+		
+		<p>
+		We use three 2-D LIDARs, a simple webcam to achieve required perception, two wheel encoders and a dual axis gyroscope to measure the vehicle’s speed and orientation.
+
+<!--
+		Two servo motors are used to control the steering angle and amount of brake applied separately providing the drive-by-wire capability.  A wheel encoder and an 3DM-GX3R-25 Microstrain IMU provides raw odometry information.
+-->
+		<p>
+		The operation software is run on a on-board computers running standard linux while another low-level real-time computer runs the vehicle controller.
+		All the software development is done using open source tools and the autonomous vehicle is running <a href="www.ros.org">Robot Operating System (ROS)</a>.
+
+		<h3>Addressing mobility requests</h3>
+		<p>
+		<table align="center">
+		<td ><img src="./www/research/AutoMoD/booking.png" height="300" alt="" /> </td>
+		<td ><img src="./www/research/AutoMoD/TransportApp.png" height="300" alt="" /> </td>
+		<td ><img src="./www/research/AutoMoD/TransportApp-2.png" height="300" alt="" /> </td>
+		</tr>		
+		</table>
+
+		First, the customers may request or cancel
+		services, specify their pick-up and drop-off locations and view
+		useful service information through a personal electronic device
+		such as a smart phone or through our web interface. 
+
+		<p>
+		<table align="center">
+		<tr>
+		<td align="center"><img src="./www/research/AutoMoD/mod.png" height="330"  alt="" /> </td>
+		</tr>
+		</table>
+		The service requests and cancellation are then added to the
+		SQL database on our server. A scheduler, which is the main
+		component of the server, interacts directly with the database.
+		It determines the order in which the requests will be serviced
+		and assigned each request to a vehicle. Once the assignment
+		is made, the scheduler populates the database with useful
+		service information such as service status, expected waiting
+		time and the vehicle that is assign to each request. This service
+		information will be transfered to the customers through our
+		web API. The server also communicates with each vehicle
+		to obtain its current status and provide the information about
+		its next task (e.g. pick-up and drop-off locations of the next
+		customer the vehicle is supposed to serve).
+
+		<p>
+		<table align="center">
+		<tr>
+			<td align="center"><iframe width="560" height="360" src="http://www.youtube.com/embed/G2pA-UTmKSs" frameborder="0" allowfullscreen></iframe></td>
+		</tr>
+		<tr>
+			<td align="left" width="420">A demonstration of the use of the On-Demand booking system used during our operations. The inset videos show actual videos from the onboard as well as ground station videos for this particular run. The pink marker shows the actual position of the vehicle transmitted through the 3G network.</td>
+		</tr>
+		</table>
+
+
+
+		<p>A human operator may monitor, add, cancel and modify service requests
+		and access the status of each vehicle through our secure web interface.
+
+
+
+
+
+			  
+		</div>        
+		</div>
+	
+		<div class="sidebar">		
+        <div class="gadget">
+		<img src="./www/research/AutoMoD/golfcar.jpg"  width="240"  border="0" alt="golf-cart"><br>	
+        </div>
+        
+        <div class="gadget">
+<!--
+			<h4><a href="automod.html">Research</a></h4>
+-->
+<!--
+			<ul class="sb_menu">
+			  <li><a href="localization.html">Vehicle Localization</a></li>
+			  <li><a href="ped-avoid.html">Pedestrian Avoidance</a></li>
+			  <li><a href="intent.html">Intention-Aware Planning </a></li>
+			  <li><a href="infra.html">Infrastructure Utilization</a></li>
+			</ul>
+-->
+        
+			<h4><a href="automod.html">Autonomous MoD Platform</a></h4>
+			<ul class="sb_menu">
+			  <li class="active"><a href="golfcart.html">Platform Description</a></li>          
+			  <li><a href="demo.html">Demonstrations</a></li>          
+			  <li><a href="https://sites.google.com/site/fmautonomy/news">Team members</a></li>
+			  <li><a href="https://sites.google.com/site/fmautonomy">Group website</a><br>(under construction)</li>          
+			</ul>       
+			
+			<h4><a href="projects.html">Back to Projects</a></h4>
+        </div>
+
+
+
+      </div>
+      <div class="clr"></div>
+	</div>
+  
+
+
+<!--  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© Copyright <a href="#">MyWebSite</a>. Layout by Cool <a href="http://www.coolwebtemplates.net/">Website Templates</a></p>
+      <ul class="fmenu">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+-->  
+
+
+</div>
+</body>
+</html>
