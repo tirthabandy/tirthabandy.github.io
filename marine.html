@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.coolwebtemplates.net
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tirthankar Bandyopadhyay</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+
+
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html"><span>Tirthankar Bandyopadhyay</span> </a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="research.html">Research Interests</a></li>
+          <li class="active"><a href="projects.html">Projects</a></li>
+          <li><a href="publication.html">Publications</a></li>        
+          <li ><a href="past-projects.html">Past Projects</a></li>     
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+	
+  	<div class="content">
+	<div class="content_resize">
+		
+		<div class="mainbar">
+			<div class="article">
+			<h2>Robust  Navigation in Marine Environments </h2>
+
+
+			<!--
+			<table align="center">
+			<TR valign="top">
+			<TD align="center">
+			<IMG src="./www/research/Marine/singapore-harbour.jpg" alt="singapore harbour"  height="200" border="1" hspace="25" vspace="5"  align="middle"><br> Crowded Singapore Harbour
+			</TD>
+
+			<TD align="center">
+			<IMG src="./www/research/Marine/selat-pauh.jpg" alt="Selat Pauh: Operational area"  height="200" border="1" hspace="25" vspace="5"  align="middle"> <br> Operational area in Selat Pauh
+			</TD>
+
+			<TD align="center">
+			<IMG src="./www/research/Marine/floating-kelong_small.jpg" alt="Floating fishing farms (kelongs)"  height="200" border="1" hspace="25" vspace="5"  align="middle"><br>Floating fishing farms (<em>Kelongs</em>) <br>(http://frank.itlab.us/)
+			</TD>
+			</TR>
+			</table>
+			-->
+
+			
+			Our objective is to collect oceanographic and environmental information using autonomous robotic systems in Singapore waters. The data can be used for environmental monitoring of toxins like algal blooms, or industrial wastes or for surveillance and inspection of marine structures. 			Unknown obstacles and moving traffic pose a major concern in autonomous operations. The large number of 	ships, numerous smaller boats and sudden appearance of fishing platforms (kelongs) in  Singapore waters, prevent planning a collision-free motion trajectory a-priori. We propose a safe navigation scheme for a single and multiple Autonomous Surface Vehicles (ASVs), that use the information from onboard sensors to plan for a collision free path in real-time while performing their data collection activities.
+
+			<p>
+			<h3><a name="challenge">Navigational Challenges</a></h3>
+
+			<table>
+			<TR align="left" valign="top">
+				<TD align="left"><IMG src="./www/research/Marine/navigation.jpg" alt="Trajectory distortion" width="300" height="240" border="1"  align="left"></TD>
+				
+<!--
+				<td><IMG src="./www/research/Marine/ld-detect-rate.jpg" alt="Detection rate drops in rough waters"  height="200" border="1" hspace="15" vspace="5"  align="middle"></td>
+-->
+				<td width="330" valign="middle" align="left"> Water currents can create undesirable drift of the ASV. A nominally square trajectory is shown in the adjoining plot distorted due to strong surface currents. The maximum velocity of the ASV (at 3 knts) is at times insufficient to counter the strong currents. </td>
+				
+				<td> </td>
+			
+			</tr>
+			</table>
+
+			
+				<table>
+				<TR align="center" valign="top">
+				
+				<td align="center">
+				<iframe width="" height="200" src="http://www.youtube.com/embed/Vj4NGCD6m0k" frameborder="0" allowfullscreen></iframe> </td>
+				
+<!--
+				<Td align="center"><A href="./www/research/Marine/kayak-choppyWater-cropped.avi"><IMG src="./www/research/Marine/choppy_kayak.jpeg" alt=""  height="200" border="1" hspace="15" vspace="5"  align="middle"> <br><small>Kayak in water Jan14-2009 (avi)</small></A></Td>
+-->
+				<td><IMG src="./www/research/Marine/ld-detect-rate.jpg" alt="Detection rate drops in rough waters"  height="200"   align="middle"></td>
+				</tr>
+				</table>
+			</td>
+
+			<TR>
+<!--
+			<TD> Water currents can create undesirable drift of the ASV. A nominally square trajectory is shown distorted due to strong surface currents. The maximum velocity of the ASV (at 3 knts) is at times insufficient to counter the strong currents.</TD>
+-->
+
+			<td align="center"> Laser detection rate falls when the sea is rough. The plot shows 
+			 the detection rate for a fixed obstacle under different sea conditions. Reliable detection of an obstacle drops from 100m to under 20m in rough seas.</td>
+			</TR>
+
+			</table>
+
+
+
+
+			<p>
+			<h3><a name="avoid">Local Planning Approach</a></h3>
+
+			<table align="center">
+			<TR valign="top">
+			<TD align="center">
+			<IMG src="./www/research/Marine/vel-proj.jpg" alt=""  height="200"   align="middle">
+			</TD>
+
+			<TD align="center">
+			<IMG src="./www/research/Marine/vel-proj-2.jpg" alt=""  height="200"   align="middle"> 
+			</TD>
+
+			<TD align="center">
+			<IMG src="./www/research/Marine/vel-proj-multi.jpg" alt=""  height="200"   align="middle">
+			</TD>
+			</TR>
+
+			<tr>
+			<TD align="center">The ASV has to avoid obstacles <br> in spite of its own uncontrollable <br> drift and any obstacle velocity.</TD>
+			<td align="center">The projection of the obstacle  <br>on ASV thrust limits the choice <br>of  motion direction.</td>
+			<td align="center"> If the desired direction to move is <br> unsafe, a closest safe heading is <br>choosen. </td>
+			</tr>
+			</table>
+
+			<p>
+
+			   Our approach is similar in principle to the velocity obstacle approach except that it is 
+			formulated in position space. By planning in the body frame of the ASV, we avoid modeling the
+			kayak and the obstacle motion individually in the rough sea. A simple linear prediction 
+			based on the immediate history is used to determine the relative obstacle
+			velocity. This keeps the computation load light as the algorithm runs at a high frequency 
+			and helps in bounding the uncertainty errors at each step.
+
+
+
+			<h3><a name="deployment">Deployment in Singapore waters</a></h3>
+
+			<table>
+			<tr>
+				<TD align="center">
+				<IMG src="./www/research/Marine/selat-pauh.jpg" alt="Selat Pauh: Operational area"  height="200" hspace="10"   align="middle"> 
+				</TD>
+				<td>
+				<IMG src="./www/research/Marine/single-diffboats.jpg" alt="Kayak operating in with boats"  height="200"  align="middle"> <br> 
+				</TD>
+			</tr>
+			<tr>
+			<td> Operational area in Selat Pauh region of Singapore waters.</td>
+			<td> Our autonomous kayak  operating in the presence of unexpected marine vehicles in the field.  </td>
+			</tr>
+			</table>
+
+			<p>
+			<h4>Stationary obstacle experiment</h4>
+
+			<table align="center">
+			<TR >
+			<!--
+			<TD align="center">
+			<A href="./www/research/Marine/stationary.avi"><IMG src="./www/research/Marine/stationary.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+			</TD>-->
+			<td><iframe width="360" height="240" src="http://www.youtube.com/embed/2F0qLrup-8I" frameborder="0" allowfullscreen></iframe></td>
+
+			<TD align="center">
+			<IMG src="./www/research/Marine/stationary-plot.jpg" alt="" width="360"  height="240" border="1" hspace="25" vspace="5"  align="middle">
+			</TD>
+			</TR>
+
+			<tr align="center">
+			<Td width="100">Video of ASV avoiding a stationary obstacle. </Td>
+			<td  width="100">GPS plot of the ASV avoidance experiment is shown in blue. Red plot shows the estimate of the stationary obstacle.</td>
+			</tr>
+
+			</table>
+
+
+			<h4>Moving obstacle experiment</h4>
+
+			<table align="center">
+			<TR valign="top">
+				<TD align="center">
+	<!--
+				<A href="./www/research/Marine/run2.avi"><IMG src="./www/research/Marine/run2.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+	-->
+				<iframe width="220" height="315" src="http://www.youtube.com/embed/wXwY25MqiNw" frameborder="0" allowfullscreen></iframe>
+				</TD>
+
+				<TD align="center">
+	<!--
+				<A href="./www/research/Marine/run2-fltk.avi"><IMG src="./www/research/Marine/run2-fltk.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+	-->
+				<iframe width="315" height="315" src="http://www.youtube.com/embed/p6dU4uqCakA" frameborder="0" allowfullscreen></iframe>
+				</TD>
+			</tr>
+
+			<tr>
+				<TD align="center">ASV avoiding a <br>moving obstacle.</TD>
+				<td align="center">ASV onboard-sensor <br>playback.</td>
+			</tr>
+			</table>
+			
+			<table align="center">
+			<tr>
+				<TD align="center">
+				<IMG src="./www/research/Marine/run2-plot.png" alt=""  height="300" border="0" hspace="25" vspace="5"  align="middle"><br> 
+				</TD>
+			</TR>
+
+			<tr>
+				<td align="center">GPS plot of the ASV  and <br>the estimation of the mobile <br> obstacle.</td>
+			</tr>
+			</table>
+
+<!--
+			<h3><a name="GCS">Guided Cluster Sampling</a></h3>
+			
+			
+			
+			In many situations marine environments have uncertainty
+			
+			To alleviate the above problems, we have developed a new point-based POMDP algorithm that takes into account uncertainty in motion, sensing, and environment map, for active sensing robots, called Guided Cluster Sampling (GCS). 
+-->
+
+			<hr>
+			<h3><a name="papers">Related Publications</a></h3>
+			<ul>
+			<li>
+			 H. Kurniawati, <U>T. Bandyopadhyay</U>, and N.M. Patrikalakis. <I><B>Global motion planning under uncertain motion, sensing, and environment map.</B></I> Autonomous Robots: Special issue on selected papers from RSS 2011. To appear.
+			 <p>
+			</li>
+
+			<li>
+			H. Kurniawati, <U>T. Bandyopadhyay</U>, and N. Patrikalakis
+			<I><B>Global Motion Planning under Uncertain Motion, Sensing, and Environment Map </B></I>
+			In Proceedings. Robotics Science and Systems 2011. 
+			<table>
+			<tr> 
+			<td><a href="./www/research/Marine/hanna11GCS.pdf">[PDF]</a></td>
+			</tr>
+			</table>
+			</li>
+
+			<li><U>T. Bandyopadhyay</U>,  L. Sarcione. and F. Hover. <I><B>A Simple Reactive Obstacle Avoidance Algorithm and Its Application in Singapore Harbor.</B></I> Int. Conf. on Field and Service Robotics. FSR-2009. 
+			<table>
+			<tr> 
+			<td><a href="./www/research/Marine/fsr09sea.pdf">[PDF]</a></td>
+			<td><a href="./www/research/Marine/BanSarHov09.bib">[BibTeX]</a></td>
+			</tr>
+			</table>
+
+
+			<li>N. M. Patrikalakis, F. S. Hover, B. H. Ooi, H. Zheng, K.T. Yeo, W. Cho, <U>T. Bandyopadhyay</U>,
+			A.C.H. Tan, H. Kurniawati, T. Taher, R. R. Khan, 
+			<I><B>Infrastructure for Mobile Sensor Network in the Singapore Coastal Zone.</B></I>
+			International Offshore (Ocean) and Polar Engineering, ISOPE - 2010.
+			<table>
+			<tr> 
+			<td><a href="./www/research/Marine/isope10Infrastructure.pdf">[PDF]</td></td>
+			<td><a href="./www/research/Marine/ParHov10.bib">[BibTeX]</a></td>
+			</tr>
+			</table>
+
+
+			<li><U>T. Bandyopadhyay</U>, L. Sarcione. and F. Hover. <I><B>Sensors and Algorithms for Safe Navigation in Singapore Harbor.</B></I>
+			Poster presented at CENSAM Workshop 2010, Singapore.
+			<table>
+			<tr> 
+			<td><a href="./www/research/Marine/censamJan10SensorAlgoSafeNavig.pdf">[PDF]</a></td>			
+			</tr>
+			</table>
+
+
+			</li>
+			</ul>
+
+			  
+			</div>
+		</div>
+	
+	
+		<div class="sidebar">		
+        <div class="gadget">
+		<img src="./www/research/Marine/multi-vehicle-web.jpg"  width="240"  border="0" alt="Experimental scene in Singapore waters"><br>
+        </div>
+        
+        <div class="gadget">
+<!--
+			<h4><a href="automod.html">Research</a></h4>
+-->
+<!--
+			<ul class="sb_menu">
+			  <li><a href="localization.html">Vehicle Localization</a></li>
+			  <li><a href="ped-avoid.html">Pedestrian Avoidance</a></li>
+			  <li><a href="intent.html">Intention-Aware Planning </a></li>
+			  <li><a href="infra.html">Infrastructure Utilization</a></li>
+			</ul>
+-->
+        
+			<h4><a href="marine.html">Autonomy in Marine Environments</a></h4>
+			<ul class="sb_menu">
+			  <li><a href="#challenge">Navigational Challenges</a></li>
+			  <li><a href="#avoid">Reactive avoidance </a></li>
+			  <li><a href="#deployment">Deployment in Singapore Waters </a></li>			  
+<!--			  <li><a href=			  "http://robotics.itee.uq.edu.au/~hannakur/planningUnderAllThreeSourcesOfUncertainty.html">Guided Cluster Sampling  </a></li>			  
+-->
+			  <li><a href="#papers">Publications</a></li>			  
+			</ul>       
+			
+			<h4><a href="projects.html">Back to Projects</a></h4>
+        </div>
+
+
+	
+<!--
+		<div class="sidebar">		
+        <div class="gadget">
+		<img src="./www/research/Marine/multi-vehicle-web.png"  width="240"  border="0" alt="Experimental scene in Singapore waters"><br>
+        </div>
+        
+        <div class="gadget">
+			<h4><a href="automod.html">Marine Research</a></h4>
+			<ul class="sb_menu">
+			  <li><a href="">Navigational Challenges</a></li>
+			  <li><a href="">Avoidance Approach</a></li>
+			  <li><a href="">Deployment in Singapore Waters </a></li>			  
+			</ul>
+        
+        
+			<h4><a href="projects.html">Back to Projects</a></h4>
+-->
+		</div>      
+      <div class="clr"></div>
+	</div>
+  
+
+
+<!--  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© Copyright <a href="#">MyWebSite</a>. Layout by Cool <a href="http://www.coolwebtemplates.net/">Website Templates</a></p>
+      <ul class="fmenu">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+-->  
+
+
+</div>
+</body>
+</html>

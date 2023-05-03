@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.coolwebtemplates.net
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tirtha's web page </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+
+
+<body>
+<div class="main">
+
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html"><span>Tirthankar Bandyopadhyay</span> </a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav"> <a name="top"></a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="research.html">Research Interests</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publication.html">Publications</a></li>                  
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+	
+  	<div class="content">
+	<div class="content_resize">
+	
+		<div class="mainbar">
+			<div class="article">
+			
+			My research interest is  in developing robotics for the real world. <p>
+			
+			For a robot to step out of highly controlled industrial environments into shared spaces with humans, it has to deal with uncertainty ever present in the real world.			
+<!--
+			one of the most pressing problem is to deal with uncertainty ever present in the real world. 
+-->
+			Robots face uncertainty due to many reasons, be it insufficient information from sensors,  environmental factors or unobservable variables.
+			My research efforts try to address the problems of uncertainty in perception, task specific environmental modeling and planning under uncertainty in everyday environments.
+
+			</div>
+		</div>
+
+
+		<div class="sidebar">
+			<div class="gadget">
+			<h4>Sources of uncertainty</h4>
+			<ul class="sb_menu">
+			  <li><a href="#sensing">Insufficient information</a></li>
+			  <li><a href="#environment">Environmental factors</a></li>
+			  <li><a href="#unobservable">Unobservable variables</a></li>
+			</ul>
+			</div>
+		</div>
+
+		<div class="mainbar">
+			<div class="article">
+				
+			<h3><a name="sensing"> Handling insufficient information : Pushing sensory modalities</a></h3>
+			Insufficient information from sensing arise  due to noisy sensory data, physical limitations of the sensing capability or lack of coverage. 
+			Many a times the solution adopted is to overcompensate by adding more sensors to solve the problem. In our autonomy  group we try to look at the problem from a minimalistic approach by pushing the limits of the robot's sensing modality to perform a particular task before adding more sensors. This can be acheived by intelligently utilizing prior information while exploiting online sensing modalities.
+
+			<p>			
+			One of our successful endeavours has been to localize our autonomous mobility platform in the university (<a href="www.nus.edu.sg">NUS</a>) campus. In contrast to utilizing an expensive 3-D laser or an expensive GPS-IMU INS system we localize our vehicle using only a single tilted 2-D laser corrected by an onboard IMU. This is achieved by creating a synthetic LIDAR by aggregating and processing scan readings in spatial and temporal dimensions. In fact, we demonstrated acheiving the vehicle location estimates of under half a meter along the road, and of the order of a few centimeters in the lateral direction using only road-side curb based features. The results hold even under temporary occlusions of the road curbs by traffic.
+			
+			
+<!--
+			As an example we showed that a excellent vehicle localization in an urban environment can be performed by using a single tilted planar LIDAR. Sensory information from each scan of the LIDAR was processed both temporally and spatially to generate robust features which could then be used to localize the vehicle in a pre-computed map. The work on utilizing road-side curb features to localize the vehicle on a known prior road network information gave us an excellent lateral  and acceptable longitudinal position estimate in the map and was published in ICRA-2012. 
+-->
+			</div>
+		</div>
+
+		<div class="sidebar">		
+			<div class="gadget">        
+				<a href="localization.html"><img  src="./www/research/AutoMoD/tilted-laser.jpg" align="top"  width="240"  border="0" alt=""></a><p> A single tilted laser is sufficient for localization needs for autonomous navigation on the road given a prior road network map. <a href="localization.html">(more)</a>
+			</div>
+		</div>
+			
+		<div class="mainbar">
+			<div class="article">
+			
+			On-board sensing only provide local information. 
+<!--
+			Many times such information is not sufficient for a proper interpretation of the scene, or to model the environment to reduce uncertainty and take intelligent decisions. 
+-->
+			An approach to improve the robot's perception is to utilize the numerous infrastructre sensors available in our everyday life. E.g, in urban environments there are traffic/security cameras, traffic lights, embedded loop detectors networked into the transportation infrastructure which could potentially provide the autonomous vehicle with valuable information to reduce the perception uncertainty. In our autonomy group we look at utilizing information from pre-existing infrastructure cameras in addition to the vehicle's on-board sensors to reduce perception uncertainty, improve the safety, and better traffic flow at critical junctions.		
+			
+<!--
+			<p>
+			On-board sensors have their own limitation, they only provide local information. 
+			We live in an world which is increasingly intrumented with sensors and controllers. This is even more true for urban environments where there are traffic/security cameras, traffic lights, embedded loop detectors networked into the transportation infrastructure. In our autonomy group at FM, we try to utilize these infrastructure sensors to complement the onboard sensors. We have demonstrated on our vehicle, autonomous navigation real life scenarios present in NUS campus where autonomy would not have been possible using onboard sensors alone. Utilizing infrastructure sensors  for improving the onboard planning for each vehicle leads to more efficient traffic flow and safer navigation. 
+-->
+			<p><a href="#top">top</a>
+			</div>
+		</div>
+
+		<div class="sidebar">		
+			<div class="gadget">
+				<a href="infra.html"><img src="./www/research/AutoMoD/infra-sensor.jpg"  width="240"  border="0" alt="Infrastructure Sensor"></a><p> Infrastructure sensors aid in detecting occluded pedestrians (e.g, on the steps) decreasing the chances of emergency evasive action.<a href="infra.html">(more)</a>	
+<!--
+				(can you locate all 3  pedestrians in the scene)
+-->
+			</div>
+		</div>
+
+
+		<div class="mainbar">			
+			<div class="article">
+
+			<h3> <a name="environment">Handling environmental factors </a> </h3>			
+			
+			
+			While a comprehensive environmental modeling is helpful, impressive performance can be gleaned from intelligently formulating the robot's task and the sensor modality in a unified manner. People following in a crowded, dynamic environment using only a simple on-board 2-D planar laser is such a scenario. Modeling the dynamics of the people while resolving the ambiguity of furniture legs with human legs with such sparse information is extremely challenging. However tracking the  target (pre-initialized person to follow) and the local visible free space is tractable. In my PhD work we show that  modeling the environment as a geometric construct of visibility polygon (which captures the free space information and the sensing boundaries) and defining an objective function (that measures the risk of losing the target from view) can provide a robust mechanism for increasing the duration for which the robot can follow the person in a crowd. Even though the sensory data is the same as would be used for visual servoing using a laser, the information extracted in an intelligent manner helps imporve the performance immensely. We have shown successful demonstration of the person following robot in a crowded cafetaria during lunch time.
+			
+			
+			
+<!--
+			<p>
+			Surprisingly,  Take the challenging task of following a non adversarial person in a crowded and unknown environment using only a planar LIDAR mounted on a robot. Clearly the main questions the robot has to address : understanding the  challenges posed by the dynamic environment in the task of following the target, and what should the next steps be so that the robot is able to keep track of the person in sight now as well as move forward in a manner that helps it keep the target in view in the future. We can show that modeling the environment as a geometric construct of Vibility polygon ( which captures the free space information and the sensing boundaries) and defining an objective function (we call it risk) can provide a robust mechanism for increasing the duration for which the robot can follow the person in a crowd. Even though the sensory data is the same as would be used for visual servoing using a laser, the information extracted in an intelligent manner helps imporve the performance immensely. 
+-->
+
+			<p>
+			Many robots in the field have to work in environmental conditions which may not always be predictable and hence modeled, like an aerial robot maintaining a position in a gust of wind or autonomous kayaks navigating in strong currents, surface waves and wakes from passing marine vehicles. At the <a href="censam.mit.edu">Center for Environmental Sensing and Modeling</a> we worked on autonomous marine vehicles to collect oceanographic and environmental information using autonomous robotic systems in Singapore waters (which has one of the heaviest traffic by tonnage and extremely strong currents due to its geographical location). 
+<!--
+			The data collected is used for environmental monitoring of toxins like algal blooms, or industrial wastes or for surveillance and inspection of marine structures for checking foreign objects or self-integrity. 
+-->
+<!--
+			Uncertainty of the water surface and the knowledge of floating obstacles and moving traffic pose a major concern in autonomous operations. 
+-->
+			The large number of ships, numerous smaller boats and sudden appearance of fishing platforms (kelongs) in Singapore waters prevent planning a collision-free motion trajectory a-priori. We proposed a safe navigation scheme for a single and multiple Autonomous Surface Vehicles (ASVs), that use the information from onboard sensors to plan for a collision free path in real-time while performing their data collection activities.  We showed that a 2-D planar laser with limited range was sufficient to navigate safely under such conditions and demonstrated it in real deployments. Under an imporvement over this work, we also showed the capability of such systems operating under a Sensing-on-Demand paradigm when the prior uncertainty models are available.
+			
+<!--
+			Under such uncertainty we developed obstacle avoidance strategies based on relative position of the kayak, its velocity and the obstacles detected in the limited sensing range of  a planar 2-D LIDAR. Using LIDAR enabled the kayak to operate round the clock while avoiding 
+			<p>
+-->
+<!--
+			Our objective is to collect oceanographic and environmental information using autonomous robotic systems in Singapore waters. The data can be used for environmental monitoring of toxins like algal blooms, or industrial wastes or for surveillance and inspection of marine structures. Unknown obstacles and moving traffic pose a major concern in autonomous operations. The large number of ships, numerous smaller boats and sudden appearance of fishing platforms (kelongs) in Singapore waters, prevent planning a collision-free motion trajectory a-priori. We propose a safe navigation scheme for a single and multiple Autonomous Surface Vehicles (ASVs), that use the information from onboard sensors to plan for a collision free path in real-time while performing their data collection activities.  
+-->
+			<p><a href="#top">top</a>
+			</div>
+		</div>
+			
+<!--
+		<div class="sidebar">		
+			<div class="gadget">        
+				<img  src="./www/research/Marine/multi-vehicle-web.png" align="center"  width="240"  border="0" alt="Experimental scene in Singapore waters"><p> Experimental scene in Singapore waters. Two  kayaks performing autonomous waypoint based data collection in Singapore Harbour waters.
+			</div>
+		</div>
+-->
+			
+
+		<div class="sidebar">		
+        <div class="gadget">
+			<A href="http://bigbird.comp.nus.edu.sg/pmwiki/farm/motion/index.php?n=Site.TargetFollow"><img src="./www/research/2dTracking/crowd-small.png"  width="240"  border="0" alt="People Following in a Crowd"></A><p>
+			The robot has to extract sufficient information about the target (person) and the environment at runtime to be able to follow the person in a crowded and dynamically changing environment.<A href="http://bigbird.comp.nus.edu.sg/pmwiki/farm/motion/index.php?n=Site.TargetFollow">(more)</A>
+        </div>
+        </div>
+		
+		<div class="sidebar">		
+		<div class="gadget">        
+			<a href="marine.html"><img  src="./www/research/Marine/multi-vehicle-web.jpg" align="center"  width="240"  border="0" alt="Experimental scene in Singapore waters"></a>
+			<p> Experimental scene in Singapore waters. Two  ASVs performing waypoint based data collection in Singapore Harbour waters.<a href="marine.html">(more)</a>.
+		</div>
+      </div>
+
+		<div class="mainbar">
+			<div class="article">
+			<h3> <a name="unobservable">Addressing unobservable components</a> </h3>					
+<!--
+			Inherent uncertainty in the environment that cannot be sensed, like human intentions.
+-->
+			A new source of uncertainty becomes relevant when the robot interacts with humans or performs its tasks in human spaces : that of addressing <I>human intentions</I>.
+			Identifying human intentions is difficult because of the diversity, subtlety of human behaviors and the lack of a powerful "intention sensor". The intentions have to be inferred from observations about the person's behavior. We have been working on a new class of motion planning problems with uncertainty in human intention : <I>Intention Aware Motion Planning</I>. In the context of autonomous navigation in urban, crowded, environments we demonstrate navigation strategies while addressing pedestrians on the road as well as human drivers.
+	
+			<p>
+			The purpose of estimating human intention is safe navigation and not to get a detailed description or model of the particular pedestrian's or driver's behavior. For that end, we combine the prediction and planning components under the framework of a <I> Mixed- Observable Markov Decision Process </I> (MOMDP), a structured variant of the classic POMDP. 
+			In spite of the criticism of POMDPs to be computationally intractable in general, we show that with proper state factorization and latest sampling based approaches the policy can be executed online on a real vehicle on road. We demonstrate this by running the algorithm on a real pedestrian crossing in the NUS campus successfully handling the intentions for multiple pedestrians, even when they are jaywalking.
+
+	
+<!--
+			Furthermore, a robot may actively gather information for intention recognition by taking sensing actions, but must balance such actions against those contributing directly to the goal of motion planning. The robot’s ultimate goal is to complete the specified tasks and not to recognize intention as an end goal. It thus should not gather more information than necessary.		
+-->
+			
+<!--
+			<p>
+			As robots venture into new application domains as autonomous vehicles
+			on the road or as domestic helpers at home, they must recognize human intentions and behaviors in order to operate effectively. This generates a new class of motion planning problems with uncertainty in human intention : <I>Intention Aware Motion Planning.</I> 
+-->
+
+<!--
+			<p>
+			Identifying human intentions is difficult because of the diversity, subtlety of human behaviors and the lack of a powerful "intention sensor". The intentions have to be inferred from observations about the person's behavior. 
+			Furthermore, a robot may actively gather information for intention recognition by taking sensing actions, but must balance such actions against those contributing directly to the goal of motion planning. The robot’s ultimate goal is to complete the specified tasks and not to recognize intention. It thus should not gather more information than necessary.
+-->
+			<p><a href="#top">top</a>
+			</div>			
+		</div>
+	
+		<div class="sidebar">		
+		<div class="gadget">        
+		<a href="intent.html">	<img src="./www/research/IntentionAware/intent.jpg"  width="240"  border="0" alt="intention aware planning"></a>
+			<p> Pedestrian intentions have to be addressed for an efficient autonomous navigation  on roads, especially in crowded university campuses. 
+			<a href="intent.html">(more)</a>.
+		</div>
+      </div>
+	
+	
+	<div class="clr"></div>
+	</div>
+      
+	</div>
+  
+
+
+<!--  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© Copyright <a href="#">MyWebSite</a>. Layout by Cool <a href="http://www.coolwebtemplates.net/">Website Templates</a></p>
+      <ul class="fmenu">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+-->  
+
+
+</div>
+</body>
+</html>

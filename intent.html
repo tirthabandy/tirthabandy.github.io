@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Design by http://www.coolwebtemplates.net
+Released for free under a Creative Commons Attribution 3.0 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tirthankar Bandyopadhyay</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<!-- CuFon ends -->
+</head>
+
+
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo"><h1><a href="index.html"><span>Tirthankar Bandyopadhyay</span> </a></h1></div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="research.html">Research Interests</a></li>
+          <li class="active"><a href="projects.html">Projects</a></li>
+          <li><a href="publication.html">Publications</a></li>          
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+	
+  	<div class="content">
+	<div class="content_resize">
+		
+		<div class="mainbar">
+		<div class="article">
+			<h2><a name="main">Intention Aware Motion Planning</a> </h2>
+
+			As robots venture into new application domains as autonomous vehicles
+			on the road or as domestic helpers at home, they must recognize human intentions and behaviors in order to operate effectively. 
+			This generates a new class of motion planning, <B><I> problems with uncertainty in human intention</I></B>. 
+
+			<p>
+			Identifying human intentions is difficult because of the diversity, subtlety of human behaviors and the lack of a powerful "intention sensor". The intentions have to be inferred from observations about the person's behavior. 
+<!--
+			Furthermore, a robot may actively gather information for intention recognition by taking sensing actions, but must balance such actions against those contributing directly to the goal of motion planning. The robot’s ultimate goal is to complete the specified tasks and not to recognize intention. It thus should not gather more information than necessary.
+-->
+
+			<table align="center">
+				<tr>
+				<td align="center"><img src="./www/research/IntentionAware/golfcar-ped.jpg" height="300"  alt="" /> </td>
+				</tr>
+			</table>
+			
+			<p>
+			A relevant example is the avoidance of pedestrians or human drivers on the road. The task of the robot is to navigate the stretch of the road. However it must take the pedestrian's intentions to move towards its goals into account for safe navigation.  
+			In many known environments especially urban road segments, the pedestrian's goals can be identified well by studying pedestrian motion flow patterns in an offline fashion. The robot just needs to gather enough observations about a particular pedestrian to identify the goal it is heading towards in an online fashion.
+
+<!--
+		</div>
+		</div>
+-->
+
+<!--
+		<div class="sidebar">		
+			<div class="gadget">
+					<img src="./www/research/IntentionAware/intent.jpg"  width="240"  border="0" alt="intention aware planning"><br>	
+			</div>
+			
+			<div class="gadget">
+			<h4><a href="automod.html">Research</a></h4>
+			<ul class="sb_menu">
+				<li><a href="">Pedestrian Intention</a></li>
+				<li><a href="">Performance on real vehicle</a></li>
+				<li><a href="">Driver Intention </a></li>
+				<li><a href="">Publications </a></li>
+			</ul>
+			</div>
+       	</div>
+
+			<div class="sidebar">		
+				<div class="gadget">        
+					<img  src="./www/research/IntentionAware/momdp-model.png" align="top"  width="240"  border="0" alt=""><p> A MOMDP model for intention-aware motion planning.
+				</div>
+			</div>
+-->
+			
+<!--
+		<div class="mainbar">
+			<div class="article">
+-->
+			<p><a href="#top">top</a>
+			<h2><a name="approach">Technical Approach </a></h2>
+			<p>
+			We formulate the problem of intention aware planning as a recently introduced <B><I>Mixed observability Markov Decision Problem (MOMDP)</I></B>, a variant of traditional POMDP, where the variables with sufficient observability are factored out to achieve significant gains in computational requirements. With the assumption that the pedestrians positions and the robot's location are observed within acceptable accuracy the only unobserved variables are the pedestrian's intentions leading to an efficient implementation of the problem.
+
+			<p>
+			This approach outperforms traditional techniques of pedestrian avoidance e.g. bayesian maximum likelihood approach, where an inference on the pedestrians intentions are made and the action is taken against most likely intentions. Due to the fact that the uncertainty in pedestrian's intention  is directly incorporated into the decision making, the actions are safer showing lower rates of collision ( in simulated studies ) without incurring additional extra cost in navigating time.
+
+			<p><a href="#top">top</a>
+			<h2><a name="golfcart">Performance on a real vehicle </a></h2>
+
+			We have implemented the algorithm on our autonomous platform to successfully avoid  pedestrians on the road. In many cases the set of all possible goals the pedestrians move towards in an environment can be learnt offline. However in real time there is still uncertainty about which of these goals the pedestrian is actually moving towards. This information is hidden to the autonomous vehicle and it has to infer and plan in spite of such uncertainty. 
+			
+			<p>
+			<B><I>We show that even though POMDPs are considered intractable for real world problems, with proper factorization of the variables they can perform in real time providing intelligent behavior.</I></B>
+			
+			<p>
+			We show the results on a real pedestrian crossing in NUS campus. In the experimental setup, the vehicle has to identify the intention of the pedestrian over a set of goals <I>(A,B,C,D)</I>  while navigating along the pedestrian crossing. Note that even though the pedestrians are supposed to move within the crossing area many of them jaywalk, which then has to be taken into the planning framework.	
+			
+			<p>
+			In the videos below, the vertical bars (color coded to goals) show the prediction indicating the belief over the intention of the pedestrian. The red/green horizontal bar shows the robot's decision to stop/go w.r.t that particular pedestrian. 
+			
+			<table align="center">
+				<tr>
+					<td><iframe width="560" height="315" src="http://www.youtube.com/embed/PNy2KgGxwBQ" frameborder="0" allowfullscreen></iframe></td>
+				</tr>
+				<tr>
+					<td width="560"> Pedestrians may act in an uncertain manner and may walk on the road instead of the side walk. The above video shows that without infering the intention of the pedestrian the vehicle may get stuck for a long time waiting for the pedestrian to move away. </td>				
+				</tr>
+			</table>
+			<p>
+			<table align="center">
+				<tr>
+					<td><iframe width="560" height="315" src="http://www.youtube.com/embed/mdsMyqBMIno?rel=0" frameborder="0" allowfullscreen></iframe> </td>
+				</tr>
+				<tr>
+					<td width="560">For each new pedestrian detected, a new instance of the MOMDP problem is generated and the decisions combined in a conservative manner. Assuming independence of pedestrians, the computational load per pedestrian increases almost linearly leading to tractability in handling large number of pedestrians.
+					</td>
+				</tr>
+			</table>
+			
+			<p>
+					
+
+			<p><a href="#top">top</a>
+			
+			
+<!--
+			<h2><a name="main">Handing driver intentions</a> </h2>
+-->
+			
+			
+			
+			
+			<hr>
+			<h3><a name="papers">Relevant Publications </a> </h3>
+
+			<ul>
+				<li><U>T. Bandyopadhyay</U>, Z. J. Chong,  D. Hsu, M. H. Ang Jr., D. Rus, and
+				E. Frazzoli <I><B>Intention-Aware Pedestrian Avoidance.</B></I>
+				In Proceedings International Symposium on Experimental Robotics, ISER-2012.
+				<p><a href="./www/research/IntentionAware/iser12momdp.pdf">[PDF]</a>			
+				</li>
+
+				<li><U>T. Bandyopadhyay</U>, K. S. Won, E. Frazzoli, D. Hsu, W. S. Lee, and D. Rus. <I><B>Intention-Aware Motion Planning.</B></I>
+				In Proceedings Workshop of Algorithmic Foundations, WAFR-2012.
+				<p><a href="./www/research/IntentionAware/wafr12iamp.pdf">[PDF]</a>			
+				</li>
+			</ul>
+			  
+			</div>   
+			     
+		</div>
+	
+		<div class="sidebar">		
+			<div class="gadget">
+					<img src="./www/research/IntentionAware/intent.jpg"  width="240"  border="0" alt="intention aware planning"><br>	
+			</div>
+			
+			<div class="gadget">
+			<h4><a href="">Intention-Aware Research</a></h4>
+			<ul class="sb_menu">
+				<li><a href="#main">Pedestrian Intention</a></li>
+				<li><a href="#approach">Technical Approach</a></li>
+				<li><a href="#golfcart">Performance on a real vehicle</a></li>
+<!--
+				<li><a href="">Driver Intention </a></li>
+-->
+				<li><a href="#papers">Publications </a></li>
+			</ul>
+			
+			<h4><a href="projects.html">Back to Projects</a></h4>
+<!--
+			<h4><a href="">People</a></h4>
+			<ul class="sb_menu">
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href="">Marcelo Ang</a></li>
+				<li><a href="">Wee Sun Lee</a></li>
+				<li><a href="">Emilio Frazzoli</a></li>
+				<li><a href="">David Hsu</a></li>
+				<li><a href="">Daniela Rus</a></li>
+			</ul>			
+-->
+			
+			</div>
+       	</div>
+
+	<div class="clr"></div>
+	</div>
+  
+
+
+<!--  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">© Copyright <a href="#">MyWebSite</a>. Layout by Cool <a href="http://www.coolwebtemplates.net/">Website Templates</a></p>
+      <ul class="fmenu">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+-->  
+
+
+</div>
+</body>
+</html>
