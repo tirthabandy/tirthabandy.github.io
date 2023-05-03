@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+  <title>Autonomous Personal Transporter : Future Urban Mobility </title>
+</head>
+
+<body>
+<h1>Intention Aware Motion Planning </h1>
+<hr>
+
+
+
+As robots venture into new application domains as autonomous vehicleson the road or as domestic helpers at home, they must recognize human intentions and behaviors in order to operate effectively.
+This generates a new class of motion planning problems with uncertainty in human intention. 
+
+<p>
+Identifying human intentions is difficult because of the diversity, subtlety of human behaviors and the lack of a powerful "intention sensor". The intentions have to be inferred from observations about the person's behavior. 
+Furthermore, a robot may actively gather information for intention recognition by taking sensing actions, but must balance such actions against those contributing directly to the goal of motion planning. The robot’s ultimate goal is to complete the specified tasks and not to recognize intention. It thus should not gather more information than necessary.
+
+<p>
+A relevant example is the avoidance of pedestrians on the road. The task of the robot is to navigate the stretch of the road. However it must take the pedestrian's intentions to move towards its goals into account for safe navigation.  
+In many known environments especially urban road segments, the pedestrian's goals can be identified well by studying pedestrian motion flow patterns in an offline fashion. The robot just needs to gather enough observations about a particular pedestrian to identify the goal it is heading towards in an online fashion.
+
+
+<p>
+We formulate the problem of intention aware planning as a recently introduced Mixed observability Markov Decision Problem (MOMDP), a variant of traditional POMDP, where the variables with sufficient observability are factored out to achieve significant gains in computational requirements. With the assumption that the pedestrians positions and the robot's location are observed within acceptable accuracy the only unobserved variables are the pedestrian's intentions leading to an efficient implementation of the problem.
+
+<p>
+This approach outperforms traditional techniques of pedestrian avoidance e.g. bayesian maximum likelihood approach, where an inference on the pedestrians intentions are made and the action is taken against most likely intentions. Due to the fact that the uncertainty in pedestrian's intention  is directly incorporated into the decision making, the actions are safer showing lower rates of collision ( in simulated studies ) without incurring additional extra cost in navigating time.
+
+<h2>Performance on a real vehicle </h2>
+
+<table border="0" align="center">
+ <tr>
+<!-- <td align="center"><img src="vehicleconfiguration.png" height="200" alt="" /> </td> -->
+<tr>
+
+<td align="center"><A href="AutoMoD.mp4"><IMG src="golfcar.jpg" alt=""  height="200" border="1" hspace="15" vspace="5"  align=""> </A></Td>
+
+<td align="center"><A href="onRoad-momdp.mp4"><img src="intent.jpg"  height="200" border="1" hspace="5" vspace="5" alt="" align="middle"></td>
+
+<td align="center"><A href="pedcrossing-momdp.mp4"><img src="pedcrossing-momdp.jpg"  height="200" border="1" hspace="5" vspace="5" alt="" align="middle"></td>
+</tr>
+
+
+<tr>
+<TD align="center">
+<a href="../AutoMoD/AutoMoD.mp4"><small> Video (mp4)</small></a>
+</TD>
+
+<TD align="center">
+<a href="onRoad-momdp.mp4"><small> Video (mp4)</small></a>
+</TD>
+
+<TD align="center">
+<a href="pedcrossing-momdp.mp4"><small> Video (mp4)</small></a>
+</TD>
+
+
+</tr>
+
+
+
+<tr> 
+<td align="center"><small>Our autonomous mobility <br>testbed.</small></td>
+<td align="center"><small> Pedestrian avoidance in front <br> of T-Lab at NUS campus </small></td>
+
+<td align="center"><small> Avoidance at a pedestrian crossing in NUS campus  </small></td>
+
+<td align="center"></td>
+</tr> 
+<!-- <tr><Td align="center"><A href="AutoMod.mp4"><IMG src="golfcar.jpg" alt=""  height="200" border="" hspace="15" vspace="5"  align=""> <br><small>Mobility on Demand in operation (mp4)</small></A></Td> 
+</tr> -->
+
+
+
+
+</table>
+
+<p>
+We have implemented the algorithm on our autonomous personal transporter and it has been successful in avoiding pedestrians on the road. For each new pedestrian detected, a new instance of the MOMDP problem is generated and the decisions combined in a conservative manner. Assuming independence of pedestrians, the computational load per pedestrian increases almost linearly leading to tractability in handling large number of pedestrians.
+
+This video shows the vehicle interacting on a real pedestrian crossing in the NUS campus. In this video the blue bars show the prediction indicating the intention of the pedestrian to move either to the left or right of the road segment. The red/green bar shows the robot's decision to stop/go w.r.t that particular pedestrian. The vehicle will not move if there is a single pedestrian that requires the vehicle to stop.
+
+
+<h3>Relevant Publications </h3>
+
+<ul>
+ 
+
+<li><U>T. Bandyopadhyay</U>, Z. J. Chong,  D. Hsu, M. H. Ang Jr., D. Rus, and
+E. Frazzoli <I><B>Intention-Aware Pedestrian Avoidance.</B></I>
+Accepted to International Symposium on Experimental Robotics, ISER-2012.
+<table>
+<tr> 
+<td>[PDF]</td>
+</tr>
+</table>
+</li>
+
+<li><U>T. Bandyopadhyay</U>, K. S. Won, E. Frazzoli, D. Hsu, W. S. Lee, and D. Rus. <I><B>Intention-Aware Motion Planning.</B></I>
+Accepted to Workshop of Algorithmic Foundations, WAFR-2012.
+</li>
+<table>
+<tr> 
+<td>[PDF]</td>
+</tr>
+</table>
+</li>
+</ul>
+
+</body>
+</html>

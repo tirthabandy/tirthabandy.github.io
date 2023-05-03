@@ -1,0 +1,5 @@
+@incollection{BanSarHov09,
+	Author = {T. Bandyopadhyay and L. Sarcione. and F. Hover.},
+	Booktitle = "In Proc. Int. Conf on Field and Service Robotics",
+	Title = {Stealth tracking of an unpredictable target among obstacles},
+	Year = {2009}}

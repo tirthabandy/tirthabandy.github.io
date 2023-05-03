@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title> Autonomy for Mobility on Demand Systems </title>
+</head>
+<body>
+
+<h1> Autonomy for Mobility on Demand Systems   </h1>
+<hr>
+<!-- At the <a href="http://smart.mit.edu/research/future-urban-mobility/future-urban-mobility.html">FM (Future Urban Mobility)</a> research group in <a href="http://smart.mit.edu/">SMART (Singapore MIT Alliance for Research and Technology)</a>, we are investigating the use of autonomy towards providing mobility solutions. Along those lines, we have developed an On-Demand Autonomous Personal Transporter (APT). 
+ -->
+
+As the use of private vehicles starts approaching its limits to
+effectively meet the demand for personal mobility in densely
+populated cities, mobility-on-demand systems emerge as a
+more economical and sustainable alternative.
+One of the main challenges in managing mobility-on-demand systems is in keeping a balanced distribution of the
+vehicles among different stations to ensure minimal waiting
+time for the customers at sustainable cost. We explore the use of vehicle autonomy in addressing this problem.  
+
+<p>
+Our research deals with developing an autonomous testbed able to navigate in a crowded campus environment in the presence of other vehicles and numerous pedestrians on the road. We investigate algorithms to push the boundaries of autonomy with a minimalistic sensor configuration to achieve full autonomy required for a mobility on demand system. The system developed also acts as a test bed for testing various technologies developed at FM for improving personal mobility in an urban setting.  
+
+
+
+<!-- <h2>APT Hardware </h2> -->
+<table border="" align="center">
+ <tr>
+<!-- <td align="center"><img src="vehicleconfiguration.png" height="200" alt="" /> </td> -->
+<tr><Td align="center"><A href="AutoMoD.mp4"><IMG src="golfcar.jpg" alt=""  height="200" border="" hspace="15" vspace="5"  align=""> <br><small>Mobility on Demand in operation (mp4)</small></A></Td>
+<td align="center"><img src="DemoSetup.png" height="200" alt="" /></td>
+</tr>
+<tr> 
+<td align="center">Our autonomous mobility testbed.</td>
+<td align="center">Operational area in NUS campus</td>
+</tr> 
+<!-- <tr><Td align="center"><A href="AutoMod.mp4"><IMG src="golfcar.jpg" alt=""  height="200" border="" hspace="15" vspace="5"  align=""> <br><small>Mobility on Demand in operation (mp4)</small></A></Td> 
+</tr> -->
+</table>
+<p> 
+We develop, utilize and fully support open source packages and our system runs extensively on <A href="http://www.ros.org/wiki">ROS</a>. Our system has run over 100km till date in the campus environments during the course of various demonstrations in the NUS campus for various visitors and dignitaries.
+
+
+<p>
+<!-- The operation software is run on on-board computers running standard linux while another low-level real-time computer runs the vehicle controller.
+All the software development is done using open source tools and the autonomous vehicle is running  ROS platform.
+
+ -->
+ 
+<!-- Two servo motors are used to control the steering angle and amount of brake applied separately providing the drive-by-wire capability.  A wheel encoder and an 3DM-GX3R-25 Microstrain IMU provides raw odometry information.
+The main perception module uses  the laser range finders,  SICK LMS 291, Hokuyo UTM 30LX and a simple webcam. The SICK lasers have a range of 80 m with 180deg field-of-view (FoV).  The Hokuyo sensor, on the other hand, has 270deg FoV with 30 m range.
+The operation software is run on a on-board computers running standard linux while another low-level real-time computer runs the vehicle controller.
+All the software development is done using open source tools and the autonomous vehicle is running  ROS platform. -->
+
+<p>
+
+
+
+<!-- <table border="0" align="center">
+<tr>
+<td align="center"> <img src="phone.png" height="240" alt="" />  </td>
+<td align="center"> <img src="webbooking.png" height="240" alt="" /></td>
+</tr>
+
+<tr><td  align="center"> Phone  booking interface </td>
+<td  align="center"> Web  booking interface </td> </tr>
+</table>
+<p>
+The personal transporter communicates with a base station over 3-G signals to update its position, system status, job status as well as to receive additional job requests. On the passenger side, we have developed an android app to send job requests  to the central server. The central server runs a scheduling program to address each passenger's request and generates a route plan in an optimal manner.
+ -->
+    
+    
+<h2>Robust Localization </h2>
+
+In an urban environment, GPS signals suffer from lack of satellite views and multi-path which severely increases the error in location estimate. However in many scenarios, the road network  and other prior maps are available or could be built relatively easily. In our research we try to identify relevant features and utilize such information to localize the vehicle.
+
+<table border="" align="center">
+ <tr>
+<!-- <td align="center"><img src="vehicleconfiguration.png" height="200" alt="" /> </td> -->
+<tr><Td align="center"><A href="curbLoc.mp4"><IMG src="curbLoc.jpeg" alt=""  height="200" border="" hspace="15" vspace="5"  align=""> <br><small>Curb based localization (mp4)</small></A></Td>
+</tr> 
+<!-- <tr><Td align="center"><A href="AutoMod.mp4"><IMG src="golfcar.jpg" alt=""  height="200" border="" hspace="15" vspace="5"  align=""> <br><small>Mobility on Demand in operation (mp4)</small></A></Td> 
+</tr> -->
+</table>
+
+<p>
+One of the most prominent features on an urban
+road is the curb, which defines the boundary of a road surface.
+An intersection is a junction of two or more roads, appearing
+where no curb exists. The combination of curb and intersection
+features and their idiosyncrasies carry significant information
+about the urban road network that can be exploited to improve
+a vehicle’s localization. 
+We propose a novel idea of “Virtual LIDAR” to
+get the measurement models for the curb-intersection features. Under the MCL
+framework, above road observation is fused with odometry
+information, which is able to yield precise localization. We
+implement the system using a single tilted 2D LIDAR on our
+autonomous test bed and show robust performance in the
+presence of occlusion from other vehicles and pedestrians.
+
+<p> 
+We are able to acheive under 1m of localization accuracy which is sufficient for the vehicle of footprint 3m x 1.5m.
+
+
+
+<h2>Publications </h2>
+
+
+<ul>
+<li>B. Qin, Z. J. Chong, <U> T. Bandyopadhyay </u>, M. H. Ang Jr.,
+E. Frazzoli and D. Rus, <I><B>Curb-Intersection Feature Based Monte
+Carlo Localization on Urban Roads</B></I>, IEEE International Conference
+on Robotics and Automation, ICRA-2012.
+<table>
+<tr> 
+<td><a href="icra12curbLoc.pdf">[PDF]</a></td>
+</tr>
+</table>
+</li>
+
+<li>Z. J. Chong, B. Qin, <U> T. Bandyopadhyay</U>, T. Wongpiromsarn, E. S. Rankin, M. H. Ang Jr., E. Frazzoli. D. Rus, D.Hsu and K. H. Low, <I><B>Autonomous Personal Vehicle for the First- and Last-Mile Transportation Services.</B></I> IEEE International Conference on
+Robotics, Automation and Mechatronics, RAM-2011.
+<table>
+<tr> 
+<td><a href="cisram11SystemInfra.pdf">[PDF]</a></td>
+</tr>
+</table>
+</li>
+</ul>
+
+
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

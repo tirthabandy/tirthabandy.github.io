@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Autonomous Personal Transporter : Future Urban Mobility </title>
+</head>
+<body>
+
+<h1>Autonomous Personal Transporter (APT) : Demo July'11   </h1>
+<hr>
+At the <a href="http://smart.mit.edu/research/future-urban-mobility/future-urban-mobility.html">FM (Future Urban Mobility)</a> research group in <a href="http://smart.mit.edu/">SMART (Singapore MIT Alliance for Research and Technology)</a>, we are investigating the use of autonomy towards providing mobility solutions. Along those lines, we have developed an On-Demand Autonomous Personal Transporter (APT). This demo tries to showcase the basic capability of this  mobility on demand system. 
+
+<h2>APT Hardware </h2>
+<table border="1" align="center">
+<tr>
+<td align="center"><img src="golfcar1.jpg" height="320" alt="" /> </td>
+<td align="center"><img src="MOD-Setup-2.png" height="320" alt="" /></td>
+</tr>
+<tr> 
+<td align="center">A sample sensor configuration on the APT</td>
+<td align="center">A centralized server performs the route planning for the APT</td>
+</tr>
+</table>
+
+<p>
+Our autonomous personal transporter  is a modified drive-by-wire Yamaha G22E golf car mounted with various sensors. It can carry utmost two passengers in addition to a safety driver at the maximum speed of 7-8 kmph. On a single charge it can operate continuously for upto 6 hrs depending on the load.
+<p>
+Two servo motors are used to control the steering angle and amount of brake applied separately providing the drive-by-wire capability.  A wheel encoder and an 3DM-GX3R-25 Microstrain IMU provides raw odometry information.
+The main perception module uses  the laser range finders,  SICK LMS 291, Hokuyo UTM 30LX and a simple webcam. The SICK lasers have a range of 80 m with 180deg field-of-view (FoV).  The Hokuyo sensor, on the other hand, has 270deg FoV with 30 m range.
+The operation software is run on a on-board computers running standard linux while another low-level real-time computer runs the vehicle controller.
+All the software development is done using open source tools and the autonomous vehicle is running  ROS platform.
+
+<p>
+
+
+
+<table border="0" align="center">
+<tr>
+<td align="center"> <img src="nexusone.jpeg" height="320" alt="" /> <img src="TransportApp.png" height="320" alt="" /> <img src="TransportApp-2.png" height="320" alt="" /> </td>
+</tr>
+<tr><td  align="center"> The mobile phone  and  Android App screenshots.</td> </tr>
+</table>
+<p>
+The personal transporter communicates with a base station over 3-G signals to update its position, system status, job status as well as to receive additional job requests. On the passenger side, we have developed an android app to send job requests  to the central server. The central server runs a scheduling program to address each passenger's request and generates a route plan in an optimal manner.
+
+   
+<h2>Operational Area </h2>
+<table align="center">
+<tr>
+<td align="center"><img src="demo_satmap.jpg"  height="360" alt="" /></td>
+</tr>
+<tr>
+<td align="center">The personal transporter services 4 pickup/dropoff locations as shown in the map.<p> It starts from its garage at Engineering Workshop (EWS : Station 0) and returns to it at the end of the operational day for charging. It services the campus Mc-Donald outlet (McD : Station 1), Engineering Auditorium (EA : Station 2) and Engineering Auditorium Annexe (E3A : Station 3).</td>
+</tr>
+</table>
+
+<p>
+
+
+
+<h2 >Demo Operations on 27 July'11  </h2>
+
+We had an exciting set of passengers who took a single or multiple rides on the system. We have uploaded some snippets of the  operational videos in their chronological order. 
+
+
+<hr>
+<h3 align="center"><u>David Hsu : McD to E3A</u></h3>
+<table align="center">
+<tr>
+<td align="center"><a href="./david-full-3.mp4"><img src="./david.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"></a>
+</td>
+</tr>
+<tr>
+<td align="center">Demo recording (video 22 M)</td>
+</tr>
+</table>
+<hr>
+<h3 align="center"><u> Daniela Rus and Cynthia Barnhart : E3A to McD and back </u></h3>
+<table align="center">
+<tr>
+	<td><a href="./daniela-full-4.mp4"><img src="./daniela-cynthia.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"> </a></td>
+	<td><a href="./daniela-cynthia-datafile-2.mp4"><img src="./visualizer-ann.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"><br> </a></td>
+</tr>
+<tr>
+<td align="center"> Demo recording (video 31.5 M)</td>
+<td align="center">  Demo  perception visualizer  (video 105 M).  </td>
+</tr>
+</table>
+
+<p>
+We had a volunteer to step in front of the moving vehicle to show the pedestrian detection and avoidance capability. The inset of the perception visualizer shows the view of the onboard webcam.  APT tries to follow  the planned route. Processed laser readings  are shown in the visualizer is used for vehicle localization and dynamic obstacle avoidance.  
+
+<table align="center">
+<tr>
+	<td align="center"><a href="./daniela-ped-stopping.mp4"><img src="./daniela-ped-stopping.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"><br>(video  16 M)</a></td>
+	<td align="center"><a href="./daniela-ped-stopping-data.mp4"><img src="./daniela-cynthia-datafile.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"><br>(video 3.7 M)</a></td>
+</tr>
+<tr>
+<td align="center">Person stepping in front</td>
+<td align="center">Perception visualizer</td>
+ </tr>
+</table>
+
+<hr>
+<h3 align="center"><u> Marcelo Ang and Regina Chan : EA to EWS and back </u></h3>
+<table align="center">
+<tr>
+<td align="center"><a href="./marcelo-full-2.mp4"><img src="./marcelo.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"></a></td>
+</tr>
+<tr>
+<td align="center">Demo recording (video 21.5 M)</td>
+</tr>
+</table>
+
+
+
+<hr>
+<h3><u>Headquarters of the operation at EWS</u></h3>
+
+A central scheduler was running on a laptop at EWS. In addition to the queries added by the mobile phone application, we also added a few requests over the phone directly into the scheduler.
+
+<table align="center">
+<tr>
+<td align="center"><a href="./HQ-Nok.avi"><img src="./HQ-Nok.png" width="" height="320" border="1" hspace="5" vspace="5" alt="" align="middle"></a> </td>
+</tr>
+<tr>
+<td align="center"> Demo operational HQ (video 15 M)</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

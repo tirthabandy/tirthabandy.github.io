@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; Linux 2.2.5-15 i686) [Netscape]"><title>Project Proposal by [TIRTHANKAR-HIMANSHU-ABHISHEK]</title></head><body bgcolor="#ffffff">
+
+<div align="right"><font size="-1">Artificial Intelligence ME 768 Jan-Apr 2000</font></div>
+
+<br>&nbsp;
+<center><table border="1" cellpadding="3">
+<tbody><tr>
+<td bgcolor="#0000ff">
+<center><b><u><font color="#ffffff"><font size="+4">OPTICAL FLOW BASED NAVIGATION
+USING&nbsp;</font></font></u></b>
+<br><b><u><font color="#ffffff"><font size="+4">AN ONBOARD CAMERA</font></font></u></b></center>
+</td>
+</tr>
+</tbody></table></center>
+
+<center>
+<h2>
+<u>Himanshu Arora, Abhishek Tiwari and Tirthankar Bandhyopadhyay</u></h2></center>
+
+<center><u>&nbsp;IIT Kanpur : April 2000</u></center>
+
+<p>
+</p><hr>
+<h2>
+Contents</h2>
+
+<ul>
+<li>
+<a href="#Motivation">Motivation</a></li>
+
+<li>
+<a href="#Example">Example: Some-Sample-Task</a></li>
+
+<li>
+<a href="#Past%20Work">Past Work</a></li>
+
+<li>
+<a href="#Methodology">Methodology</a></li>
+
+<li>
+<a href="#Sample%20Input-Output">Sample input/output</a></li>
+
+<li>
+<a href="#Future%20work%3EScope%20of%20expansion%3C/a%3E%3C/li%3E%3CLI%3E%3CA%20HREF=" #links="">On-Line
+Links</a></li>
+
+<li>
+<a href="#Bibliography">Bibliography</a></li>
+</ul>
+
+<li>
+<a href="#Source%20codes">Documentation</a></li>
+
+<br>
+<hr>
+<p><a name="Motivation"></a>
+</p><h2>
+<u>Motivation</u></h2>
+&nbsp;&nbsp; AUTONOMOUS NAVIGATION of robots in real life complex domains
+is an interesting and constructive task to accomplish. In order to do this
+the robot should be able to perceive the relative depths of various objects,
+dynamic or stationary, in its field of view. The mechanism by which most
+of the living beings, including humans, do this is through OPTICAL FLOW
+and STEREO VISION. This was the major motivating factor which led us to
+go for this project and implement the technique practically on a robot.
+However, we will be working with MONOCULAR VISION, an interesting domain
+of further extension of the project is to make navigation more robust by
+employing STEREO VISION in addition to the techniques described here.
+<p>&nbsp;&nbsp;&nbsp; The project could be of extensive use in AUTONOMOUS
+SURVEILLANCE ROBOTS, MARS EXPLORERS, UNMANNED VEHICLES(UMVs) and PILOT
+LESS AIR CRAFTS etc. What we wish to finally come up with is the implementation
+of AUTONOMOUS NAVIGATION on the Remotely Operated Mobile Platform.
+</p><hr><a name="PIC 2"></a>
+<center><table border="0" cellpadding="0" cellspacing="5" cols="1" height="50" width="400">
+<tbody><tr>
+<td><img src="index_files/threeviews.jpg" align="middle"></td>
+</tr>
+
+<tr>
+<td>picture 1
+<br><a href="http://robotics.jpl.nasa.gov/tasks/scirover/homepage.html">URL
+: robotics.jpl.nasa.gov/tasks/scirover/homepage.html</a></td>
+</tr>
+</tbody></table></center>
+&nbsp;&nbsp;&nbsp; Imagine a robot that can wander around the campus. Once
+its task position is specified it can efficiently reach there avoiding
+all kinds of obstacles, fixed or moving, that it encounters in its path.
+This requires distinguishing between Global &amp; Non global motion using
+Optical Flow techniques
+<p>
+</p><hr>
+<p><a name="Example"></a>
+</p><h2>
+Example:</h2>
+<u>Sample Task</u>: To get the optical flow field of a fixed obstacle towards
+which the robot is heading directly , to analyze this optical flow and
+to make appropriate decisions about its movement directions in order to
+avoid the obstacles in its path.
+<p>&nbsp;&nbsp; The following two figures provide a very simple insight
+into the concept of Optical Flow. These figures exemplify how Optical Flow
+can be used for detecting obstacles during autonomous navigation.&nbsp;<img src="index_files/Figure1_crop.gif" align="middle">
+<br>Figure 1
+</p><p><img src="index_files/figure2_crop.gif" align="middle">
+<br>Figure 2&nbsp;
+</p><hr><a name="Past Work"></a>
+<h2>
+Past Work</h2>
+&nbsp;&nbsp; The Techniques described here for Optical Flow field calculations
+are taken from a paper by J.L. Barron , D.J. Fleet of the Dept. of Computer
+Science ,University of Western Ontario and S.S. Beauch of the Dept. of
+Computer Science , Queen's University. The paper describes 9 different
+optical flow techniques. <a href="#BIB1">bibtex entry</a>&nbsp;&nbsp;&nbsp;
+The other part of our project includes the interpretation of the Optical
+Flow Fields. The idea for doing this comes from a paper called Real Time
+Navigation and Obstacle Avoidance from Optical Flow on a Space Variant
+Map written by Gregory Baratoff,Christan Toepfer,Heiko Neumann.
+<p>&nbsp;&nbsp;&nbsp; Some help was also taken from "Real Time Optical
+Flow", the Ph.D. thesis of Ted Camus.&nbsp;
+</p><hr><a name="Methodology"></a>
+<h2>
+Methodology</h2>
+&nbsp;&nbsp; In this project we used a lego robot <a href="#PIC%203">(refer
+picture 3)</a> which gets visual feedback from the on board camera installed
+on it and moves forward avoiding obstacles which come in its way.
+<p>&nbsp;&nbsp; We have divided our project into three modules:
+</p><ol>
+<li>
+&nbsp;Generating the Optical Flow fields from the motion of the robot.</li>
+
+<li>
+&nbsp;Meaningful interpretation of the fields and deciding upon the next
+step.</li>
+
+<li>
+&nbsp;Implementing the commands given by the master processor on a physical
+robot.</li>
+</ol>
+
+<p><br><i>The following figure shows the block diagram of the process.</i>
+<br>&nbsp;
+</p><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote><img src="index_files/figure3_crop.gif" align="middle"></blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<h3>
+<i><u>OPTICAL FLOW FIELD GENERATION</u></i></h3>
+&nbsp;&nbsp; As the robot moves forward, the objects around it move towards
+it with a certain velocity in the 3-D frame. The 2-D approximation of this
+motion is depicted in change of coordinates of pixels corresponding to
+the same object in two consecutive frames of image. This motion of the
+objects in 2-D image is called OPTICAL FLOW FIELD.
+<p>There are two basic techniques used to determine OPTICAL FLOW :
+<br>&nbsp;
+</p><ol>
+<li>
+&nbsp;Differential Techniques and</li>
+
+<li>
+&nbsp;Region Based Matching.</li>
+</ol>
+
+<p><br>&nbsp;&nbsp; In the <b><i>differential techniques</i></b> we estimate
+the velocity of the pixels by computing <i>spatiotemporal derivatives</i>
+of the image. Here we have to make certain assumptions like
+</p><ul>
+<li>
+the intensities or say gradients of intensities remain constant with time
+and</li>
+
+<li>
+aliasing does not take place.</li>
+</ul>
+But often the space and time derivatives cannot be calculated very accurately.
+<p>&nbsp;&nbsp; In <b><i>Region Based Matching</i></b> we take two consecutive
+frames and find the position of pixels in the two images which correspond
+to the same object. Let us define the image at two instants to be F(x,y)
+and G(x,y) where F(x,y) and G(x,y) contain the value of intensities of
+pixel (x,y). To find the best match of the pixel at the position (x,y)
+in the first image we have to maximize similarity measures like correlation
+function or minimize distance functions like sum-of-squared difference(SSD)
+given by:
+<br>&nbsp;
+<br>&nbsp;
+</p><center>
+<h3>
+<u>SSDfg(x,y,p,q)=(sum-over-i[sum-over-j{W(i,j)*[F(x+i,y+j)-G(x+i+p,y+j+q)]}])</u></h3></center>
+where W(i,j) is window function, and we have to minimize over p and q.&nbsp;&nbsp;&nbsp;
+We have used Region Based Matching to calculate the optical flow and minimized
+the SSD function. While finding the optical flow we are using two assumptions
+: -
+<br>&nbsp;
+<blockquote>
+<ul>
+<li>
+We break up the whole image ( 320 X 240 ) pixels in 40 blobs of 8 X 6 pixels
+and assume that the whole blob moves as a single entity . This simplifies
+and speeds up the computation. This is known as the <b><i>rigid body</i></b>approximation
+.In this case we get 40 optical flow vectors.</li>
+</ul>
+</blockquote>
+
+<center><img src="index_files/rigid.gif">
+<br>Here the blob is 3 X 3 big.</center>
+
+<p><br>
+<br>
+</p><li>
+The second assumption is that the robot is not moving very fast so that
+the search for the corresponding pixel is limited to a small area.</li>
+
+<center><img src="index_files/corre.gif">
+<br>The search space for pixel A is depicted and the corresponding point
+found is B .</center>
+&nbsp;&nbsp; The difference between the x &amp; y positions for the corresponding
+points im the two images are stored into an array and this information
+is passed to the algorithm to find the <b><i>time to contact</i></b>.
+<h3>
+<i><u>INTERPRETATION OF OPTICAL FLOW FIELDS</u></i></h3>
+&nbsp;&nbsp; It can be shown by geometry that for objects at the same radial
+distance from the camera, the optical flow at the periphery of the image
+is much higher than that at the center . Thus the peripheral flow vectors
+can be detected reliably even if compressed. Moreover the robot has very
+little probability of colliding with object whose image is at the periphery.
+So we may neglect the optical flow vector at the periphery for Obstacle
+Avoidance. If there is highly diverging field at some point, the robot
+has danger of collision with the object at that point. So the robot will
+move away from that point. While moving through a corridor we try to make
+the fields of both the walls of the corridor equal. This will bring the
+robot at the center of the corridor.
+<p>&nbsp;&nbsp; In order to analyze the data from the optical flow field
+we find the time to contact of the obstacles . The inherent assumption
+is that the <i>robot is moving in the direction along the optical axis</i>.
+</p><center>
+<p><img src="index_files/foe.gif"></p></center>
+
+<p>&nbsp;&nbsp; The above figure discusses the optical geometry . The point
+of interest P at coordinates ( X Y Z ) is projected through the focus of
+projection centered at the origin of the coordinate system ( 0,0,0 ). P
+is stationary in the real world whereas the origin of the projection moves
+forward with a velocity of (dZ/dt). As the image plane moves closer to
+P , the position of p in the image also changes. Using equilateral triangles:
+</p><center>
+<p>(x / X) = (y / Y) = (z / Z) ...........eqn.(1)
+</p><p>y / z = Y / Z ...........eqn.(2)
+</p><p>yZ=Yz
+</p><p>&nbsp;Differentiating wrt time,
+</p><p>yZ' + y'Z = Y'z + Yz' .........eqn.(3),</p></center>
+
+<p>z is the distance of the screen from the optical center. So it remains
+constant as the robot moves forward. Since the robot is moving along the
+optical axis, Y also remains constant( see the above figure ). So the eqn.(3)
+becomes,
+</p><center>
+<p>(Z / Z') = -(y / y') .........eqn.(4), OR
+<br>time to contact = -(y / y').</p></center>
+
+<p>Since we already know the velocity of the robot (i.e. Z'), we can determine
+the depth from eqn.(4) and then we can determine X and Y from eqn.(1).
+Thus we can plot Z for each point in the image. Such a plot is called <i><b>Depth
+Plot</b> </i>.
+<br>The data used for calculation and for plotting the depth plot is obtained
+by convolving the original depth plot image with a smoothening filter which
+quite effectively dampens out the noise we were getting&nbsp; with the
+depth data.
+<br>&nbsp;
+<br>&nbsp;
+</p><center><table nosave="" border="1" cols="3" width="25%">
+<tbody><tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2</td>
+
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</td>
+</tr>
+
+</tbody><caption align="bottom"><i>The smoothening filter used</i></caption>
+</table></center>
+
+<p>Some of the results obtained can be seen below --
+<br>&nbsp;
+<br>&nbsp;
+</p><center><br><table border="3" cellpadding="0" cellspacing="20" cols="3" height="50" width="500">
+<caption>
+<center></center></caption><tbody>
+</tbody>
+
+
+<tbody><tr>
+<td><img src="index_files/fixcamera1.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/fixcamera2.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/fixcamera3.gif" align="middle" height="240" width="320"></td>
+</tr>
+
+<tr>
+<td>Robot fixed and the Plank moving laterally wrt the optical axis</td>
+
+<td>Robot fixed and the hand moving towards the robot</td>
+
+<td>Robot fixed and the Plank moving towards the robot</td>
+</tr>
+
+<tr>
+<td><img src="index_files/egomotion4.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/egomotion5.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/egomotion6.gif" align="middle" height="240" width="320"></td>
+</tr>
+
+<tr>
+<td>Robot directly heading towards a wooden plank</td>
+
+<td>Robot moving parallel to the wooden plank</td>
+
+<td>Robot moving towards obstacles at different depths
+<p><u>Note :</u> The obstacle that is nearer has larger optical flow fields</p></td>
+</tr>
+
+<tr>
+<td><img src="index_files/original1.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/opticalflow1.gif" align="middle" height="240" width="320"></td>
+
+<td><img src="index_files/depth1.gif" align="middle" height="240" width="320"></td>
+</tr>
+
+<tr>
+<td>Robot directly heading towards a wooden plank</td>
+
+<td>The corresponding optical flow fields</td>
+
+<td>The corresponding depth plot</td>
+</tr>
+</tbody></table></center>
+The time to contact algorithm intakes the optical flow data and outputs
+the time taken to make contact with the object present at that particular
+blob in the image. From the time to contact we find (knowing the exact
+value of z from calibration ) the value of the depth of the different blobs
+and plot the depth map.
+<p>This is also used to find the values of X &amp; Y to --
+</p><ol>
+<li>
+identify the obstacle and</li>
+
+<li>
+to find the left &amp; right edges of the obstacle.</li>
+</ol>
+
+<p><br>&nbsp;&nbsp; All this data is then fed to the <b><i>decision making
+algorithm</i></b> which then determines whether to move right , left ,
+to continue and if so by what amount.
+</p><h3>
+<i><u>DECISION MAKING BASED ON OPTICAL FEEDBACK</u></i></h3>
+&nbsp;&nbsp; Our <b><i>strategy program</i></b> makes decisions about <i>what
+to do next</i> and directs the robot to do so. We use the assumption that
+the obstacle height is between 5-15 cms and anything lower than this will
+not be detected by the camera which is a limitation in this case. Another
+implicit assumption is that the depth map calculated is accurate.&nbsp;&nbsp;&nbsp;
+For this we first calculate the depth map and in the image if there is
+not any obstacle nearer to the robot than a particular threshold (which
+is decided by the speed of the robot), then it will continue its motion.
+If there is indeed any obstacle in the range then both the left edge and
+the right edge is calculated .Since we know the Z of the obstacle we find
+the X of the edges and if this comes out to be less than a particular region
+: X_thres to -X_thres the robot moves in such a way that the right edge
+or the left edge depending upon the case, moves out of this region.&nbsp;&nbsp;&nbsp;
+It may also be possible that there may be a passage through which it tries
+to maneuver. If the passage width is less than the width of the robot the
+edges both lie in the X_thres to -X_thres. In this case the robot will
+come to a halt.
+<p>&nbsp;&nbsp; The decision about motions are made and appropriate instructions
+are passed via the transmitter to a receiver on the robot which are decoded
+by the microcontroller on the robot. This microcontroller then sends adequate
+pulses to the motors which in turn drives the wheels and the robot moves
+as per the decision made by the strategy programme.
+<br>&nbsp;
+</p><p><b><i><u>IMPLEMENTATION ON HARDWARE</u></i></b>
+<br>&nbsp;&nbsp; We are implementing the commands given by the decision
+making program or <b><i>strategy program</i></b> on a physical robot. We
+are using a robot made of lego whose pictures are given below.
+<br><a name="PIC 3"></a><img src="index_files/image1.gif" align="middle">
+<br><a name="Source codes"></a>
+</p><h2>
+<b><i><u>For documentation</u></i></b></h2>
+<u>GRABING IMAGE SEQUENCES</u>
+<p>The grabing of image sequences and changing them into the required buffers
+in the numerical array
+<br>form was accomplished using the MATROX Imaging card . The source code
+reffered below first
+<br>allocates memory locations for the various memory buffers and child
+buffers used and using
+<br>standard Matrox command to display frames continuously at a rate of
+30 frames per seconds. Then
+<br>it grabs two frames for further computation and passes on the required
+buffers to the included
+<br>header "library.h" . The program also computes the time taken to grab
+the two images .The later part of the code contains standard commands for
+displaying the buffers processed by the included library.
+<br><u>Included Libraries</u> :- mil.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+stdio.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+stdlib.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+conio.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+library.h ( This library was written by us )
+<br><u>Input :-</u> Real Time data from the vision card
+<br><u>Output:-</u>&nbsp; Two grabbed Image Buffers and the time elapsed
+in between the two.
+<br>To see the source code <a href="http://www.cse.iitk.ac.in/%7Eamit/courses/AI/00/atiwari/opticflow.c">click here.</a>
+<br>&nbsp;
+</p><h2>
+<a name="opticflow.c"></a></h2>
+<u>Finding the flow fields</u>
+<p>The image buffer size recieved by this segment of the program is an
+array of 320x240 numbers .The estimation of flow fields is done by minimising
+the ssd of a 8 x 6 block over a 9 x 9 ie 81 matches . The search is done
+radially outwards
+</p><p><u>Finding the Time to Contact and getting the Relative depth plot</u>
+</p><p>The next segment of the program deals with the computation of the Time
+to Contact of each 8 x 6
+<br>block using the two arrays and the time information supplied by the
+above program. It then finds the
+<br>relative depths of each point by multiplying the time with the robot's
+velocity. It then plots the corresponding depth ploton a scale of 0 - 255.
+</p><p><u>Decision making (Strategies)</u>
+</p><p>This section stores the real world coordinates of the obstacles in an
+array and finds their edges. It uses this data to decide what to do next
+and passes this information to the program which sends data to the hardware
+through the serial port.
+<br><u>Included Libraries:-</u> mil.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+math.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+time.h
+<br><u>Input:-</u> Two Image Buffers and the time taken to grab them
+<br><u>Output :-&nbsp;</u>&nbsp; Image buffers containing Flow Fields,
+
+DepthPlots Original Image and The Decisions taken
+<br>To see the source code <a href="http://www.cse.iitk.ac.in/%7Eamit/courses/AI/00/atiwari/library.h">click here.</a>
+</p><p><u>Sending the intructions to the on board microcontroller:-</u> This
+is a standard program to send data on serial
+<br>port to the microcontroller. Instructions are sent in the form of bytes.
+<br><u>Included libraries:-</u> dos.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+conio.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+math.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ctype.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+stdio.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+stdlib.h
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+io.h
+<br><u>Input :-&nbsp;</u> Decisions made by the above program.
+<br><u>Output:-</u> Bytes sent to the microcontroller.
+<br>To see the source code <a href="http://www.cse.iitk.ac.in/%7Eamit/courses/AI/00/atiwari/tra.c">click here.</a>
+<br><u>Execution of instructions :-</u> This program was written in assembly
+language and was programmed on the
+<br>microcontroller . It decodes bytes recieved through the serial port
+and sends appropriate instructions to the
+<br>motors.
+<br><u>Input:-</u> The bytes sent through the serial port.
+<br><u>Output:-</u> Execution of instructions by the motors.
+<br>&nbsp;
+</p><h2>
+Sample Input &amp; Expected Output</h2>
+&nbsp;&nbsp; The following is the demonstration of what the robot is expected
+to do after the completion of the project .&nbsp;&nbsp;&nbsp; Top view
+displays the target position which the robot is to attain as a pink flag
+on the right side of the image. The robot is on the left side of the image
+and is required to reach the target finding its path amidst many fixed
+obstacles.
+<br>&nbsp;
+<br>&nbsp;
+<br>
+<center>
+<p>View1 : The objective of the robot is to reach the pink flag and it
+starts heading towards the pink obstacle
+<br><img src="index_files/vie1.gif" align="middle">
+<br>&nbsp;
+</p><p>View2 : The robot turns right to ignore the pink obstacle
+<br><img src="index_files/vie2.gif" align="middle">
+<br>&nbsp;
+</p><p>View3 : The robot heads towards the white obstacle
+<br><img src="index_files/vie3.gif" align="middle">
+<br>&nbsp;
+</p><p>View4 : The robot turns left to ignore the white obstacle and aligns
+itself against the green obstacle
+<br><img src="index_files/vie4.gif" align="middle">
+<br>&nbsp;
+</p><p>View5 : The robot turns left to ignore the white obstacle and aligns
+itself against the green obstacle after which it aligns itself in front
+of the guide way between the white and the the green obstacle
+<br><img src="index_files/vie5.gif" align="middle">
+<br>&nbsp;
+</p><p>View6 : The robot successfully reaches the target position
+<br><img src="index_files/vie6.gif" align="middle"></p></center>
+
+<p><a name="Links"></a>
+</p><h2>
+On-Line Links</h2>
+
+<ul>
+<li>
+<a href="http://www.isr.ist.utl.pt/%7Ejasv/vislab/publications/publications.html">publications
+on robot vision for the years 1993-99</a></li>
+
+<li>
+<a href="http://neurobotics.bu.edu/conferences/CIRA98/">Paper on interpretation
+of optical flow fields</a></li>
+
+<li>
+<a href="http://www.cis.ufl.edu/%7Evemuri/vp03.html">Paper on optical flow
+computation</a></li>
+</ul>
+
+<hr><a name="Bibliography"></a>
+<h2>
+Annotated Bibliography</h2>
+<a name="BIB1"></a>
+<br><font size="-1">@PhdThesis{Camus:1995,</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+author=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ Camus,Ted },</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+year=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ 1995},</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; keywords
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ OPTICAL FLOW , TIME TO CONTACT },</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; institution
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{Brown University - CS},</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ Real-Time Optical Flow }</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; month
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ May },</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pages
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ 130 },</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; annote
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</font>
+<p><font size="-1">The paper describes three different techniques for computation
+of Optical Flow in real time . They are</font>
+<br><font size="-1">Gradient Based Optical Flow , Correlation Based Optical
+Flow and Linear Optical Flow . The intrinsic</font>
+<br><font size="-1">assumption in Gradient Based Optical Flow is that the
+brightness at a given point in an image is contant</font>
+<br><font size="-1">w.r.t. time and the two dimentional optical flow fields
+are computed using this assumption . Correlation</font>
+<br><font size="-1">Based technique is the most reliable and robust of the
+three . The assumption here is that a certain block</font>
+<br><font size="-1">of nearby n x n pixels have the same optical flow fields
+and the search space of the corresponding block in</font>
+<br><font size="-1">the next frame is limited by a factor , which depends
+on the velocity of the moving robot or the external</font>
+<br><font size="-1">world . This technique is computationally inefficient
+because the search space here is quadratic . Linear</font>
+<br><font size="-1">Optical Flow technique is a correspondence search on
+the time scale ie it searches for the corresponding</font>
+<br><font size="-1">pixel in successive frames at a location specified apriori
+.</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The paper
+also describes algorithms for computation of time to contact of each point
+in the field of</font>
+<br><font size="-1">view . The estimation of the Focus of expansion for different
+sequence of motion is also dealt with in</font>
+<br><font size="-1">elaborate detail . The paper also deals with various
+optical flow estimation problems like The Aperture</font>
+<br><font size="-1">problem and The&nbsp; Temporal Aliasing problem.</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Abhishek Tiwari</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Himanshu Arora</font>
+<br><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Tirthankar Bandyopadhyay (4/2000)}</font>
+</p><pre>@Article{Barron/Fleet/Beauchmin:1992,
+&nbsp; author=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { Barron,J.L. and D.J.Fleet and S.S.Beauchemin},
+&nbsp; year&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 1992},
+&nbsp; keywords =&nbsp;&nbsp;&nbsp; { OPTICAL FLOW IMAGE},
+&nbsp; institution=&nbsp; { UWO-CS/UWO-CS/QU-CS},
+&nbsp; title =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { Performance of Optical Flow Techniques},
+&nbsp; month =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { July},
+&nbsp; pages =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 81},
+&nbsp; annote=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+
+This paper describes various techniques for the computation of Optical Flow fields.
+All these techniques can be broadly classified into two major types namely:
+differential techniques and region based techniques. A few techniques of both types are
+described in this paper. Differential techniques make a broad assumption that either
+the intensity is constant with time or the gradient of intensity is constant with&nbsp;
+time. This is a crude assumption in the sense that in addition to this assumption we
+have an added disadvantage that the gradients usually cannot be calculated accurately.
+The region based techniques are more reliable since even if the equations we get after
+minimizing the SSD function do not have unique solution, we may use the data from the
+past frames to decide on the pixels which brings out a more closer estimate as
+compared to the differential techniques.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Himanshu Arora
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Abhishek Tiwari
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tirthankar Bandhopadhyay (2/2000)}}
+
+
+</pre>
+
+<hr>This proposal was prepared by Abhishek Tiwari, Himanshu Arora and Tirthankar
+Bandhyopadhyay as a part of the project component in the Course on Artificial
+Intelligence in Engineering in the JAN semester of 2000 . (Instructor :
+<a href="http://www.iitk.ac.in/%7Eamit/index.html">Dr.Amitabha
+Mukerjee</a> )
+<p>&nbsp;[ <a href="http://www.iitk.ac.in/mech/courses/768/">COURSE WEB
+PAGE</a> ] [ <a href="http://www.cse.iitk.ac.in/users/me/fc/amit/768/projects/index.html">COURSE
+PROJECTS 2000 (local CC users) </a>]
+
+</p></body></html>

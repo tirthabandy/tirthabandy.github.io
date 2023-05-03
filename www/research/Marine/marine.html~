@@ -1,0 +1,196 @@
+
+<html>
+<head><title>Tirthankar Bandyopadhyay</title></head>
+
+<body>
+
+
+<div align="Center"><h2><b>Robust  Navigation in Harbour Environments</b></h2>
+</div>
+<hr>
+
+<table align="center">
+<TR valign="top">
+<TD align="center">
+<IMG src="singapore-harbour.jpg" alt="singapore harbour"  height="200" border="1" hspace="25" vspace="5"  align="middle"><br> Crowded Singapore Harbour
+</TD>
+
+<TD align="center">
+<IMG src="selat-pauh.jpg" alt="Selat Pauh: Operational area"  height="200" border="1" hspace="25" vspace="5"  align="middle"> <br> Operational area in Selat Pauh
+</TD>
+
+<TD align="center">
+<IMG src="floating-kelong_small.jpg" alt="Floating fishing farms (kelongs)"  height="200" border="1" hspace="25" vspace="5"  align="middle"><br>Floating fishing farms (<em>Kelongs</em>) <br>(http://frank.itlab.us/)
+</TD>
+</TR>
+
+</table>
+
+<br><br>
+Our objective is to collect oceanographic and environmental information using autonomous robotic systems in Singapore waters. The data can be used for environmental monitoring of toxins like algal blooms, or industrial wastes or for surveillance and inspection of marine structures.
+Unknown obstacles and moving traffic pose a major concern in autonomous operations. The large number of
+ships, numerous smaller boats and sudden appearance of fishing platforms (kelongs) in  Singapore waters, prevent planning a collision-free motion trajectory a-priori. We propose a safe navigation scheme for a single and multiple Autonomous Surface Vehicles (ASVs), that use the information from onboard sensors to plan for a collision free path in real-time while performing their data collection activities.
+
+
+<h3>Navigational Challenges</h3>
+
+<table>
+<TR align="center" valign="top">
+<TD><IMG src="navigation.jpg" alt="Trajectory distortion"  height="200" border="1" hspace="35" vspace="5"  align="middle"></TD>
+
+<td align="center">
+	<table>
+	<TR align="center" valign="top">
+	<Td align="center"><A href="kayak-choppyWater-cropped.avi"><IMG src="choppy_kayak.jpeg" alt=""  height="200" border="1" hspace="15" vspace="5"  align="middle"> <br><small>Kayak in water Jan14-2009 (avi)</small></A></Td>
+	<td><IMG src="ld-detect-rate.jpg" alt="Detection rate drops in rough waters"  height="200" border="1" hspace="15" vspace="5"  align="middle"></td>
+	</tr>
+	</table>
+</td>
+
+<TR>
+<TD> Water currents can create undesirable drift of the ASV. A nominally square trajectory is shown distorted due to strong surface currents. The maximum velocity of the ASV (at 3 knts) is at times insufficient to counter the strong currents.</TD>
+
+<td align="center"> Laser detection rate falls when the sea is rough. The plot shows <br>
+ the detection rate for a fixed obstacle under different sea <br>conditions. Reliable detection of an obstacle drops from 100m 
+<br>to under 20m in rough seas.</td>
+</TR>
+
+</table>
+
+
+
+
+
+<h3>Local Planning Approach</h3>
+
+<table align="center">
+<TR valign="top">
+<TD align="center">
+<IMG src="vel-proj.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle">
+</TD>
+
+<TD align="center">
+<IMG src="vel-proj-2.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"> 
+</TD>
+
+<TD align="center">
+<IMG src="vel-proj-multi.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle">
+</TD>
+</TR>
+
+<tr>
+<TD align="center">The ASV has to avoid obstacles <br> in spite of its own uncontrollable <br> drift and any obstacle velocity.</TD>
+<td align="center">The projection of the obstacle  <br>on ASV thrust limits the choice <br>of  motion direction.</td>
+<td align="center"> If the desired direction to move is <br> unsafe, a closest safe heading is <br>choosen. </td>
+</tr>
+</table>
+
+<br><br>
+
+   Our approach is similar in principle to the velocity obstacle approach except that it is 
+formulated in position space. By planning in the body frame of the ASV, we avoid modeling the
+kayak and the obstacle motion individually in the rough sea. A simple linear prediction 
+based on the immediate history is used to determine the relative obstacle
+velocity. This keeps the computation load light as the algorithm runs at a high frequency 
+and helps in bounding the uncertainty errors at each step.
+
+
+
+<h3>Deployment in Singapore waters</h3>
+
+<h4>Stationary Obstacle</h4>
+
+<table align="center">
+<TR valign="top">
+<TD align="center">
+<A href="stationary.avi"><IMG src="stationary.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+</TD>
+
+<TD align="center">
+<IMG src="stationary-plot.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle">
+</TD>
+</TR>
+
+<tr>
+<TD align="center">ASV avoiding a stationary <br> obstacle</TD>
+<td align="center">GPS plot of the ASV in blue. <br> Red plot shows the estimate <br>of the stationary obstacle.</td>
+
+
+</tr>
+
+
+</table>
+
+
+<h4>Moving Obstacle</h4>
+
+<table align="center">
+<TR valign="top">
+<TD align="center">
+<A href="run2.avi"><IMG src="run2.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+</TD>
+
+<TD align="center">
+<A href="run2-fltk.avi"><IMG src="run2-fltk.jpg" alt=""  height="200" border="1" hspace="25" vspace="5"  align="middle"><br><small>Video (avi)</small></A>
+</TD>
+
+<TD align="center">
+<IMG src="run2-plot.png" alt=""  height="200" border="0" hspace="25" vspace="5"  align="middle"><br> 
+</TD>
+</TR>
+
+<tr>
+<TD align="center">ASV avoiding a <br>moving obstacle.</TD>
+<td align="center">ASV onboard-sensor <br>playback.</td>
+<td align="center">GPS plot of the ASV  and <br>the estimation of the mobile <br> obstacle.</td>
+</tr>
+</table>
+
+
+
+<hr>
+<h3>Related Publications</h3>
+
+<ul>
+<li><U>T. Bandyopadhyay</U>,  L. Sarcione. and F. Hover. <I><B>A Simple Reactive Obstacle Avoidance Algorithm and Its Application in Singapore Harbor.</B></I> Int. Conf. on Field and Service Robotics. FSR-2009. 
+<table>
+<tr> 
+<td><a href="./www/research/Marine/fsr09sea.pdf">[PDF]</a></td>
+<td><a href="./www/research/Marine/BanSarHov09.bib">[BibTeX]</a></td>
+</tr>
+</table>
+
+
+<li>N. M. Patrikalakis, F. S. Hover, B. H. Ooi, H. Zheng, K.T. Yeo, W. Cho, <U>T. Bandyopadhyay</U>,
+A.C.H. Tan, H. Kurniawati, T. Taher, R. R. Khan, 
+<I><B>Infrastructure for Mobile Sensor Network in the Singapore Coastal Zone.</B></I>
+International Offshore (Ocean) and Polar Engineering, ISOPE - 2010.
+<table>
+<tr> 
+<td><a href="./www/research/Marine/isope10Infrastructure.pdf">[PDF]</td></td>
+<td><a href="./www/research/Marine/ParHov10.bib">[BibTeX]</a></td>
+</tr>
+</table>
+
+
+<li><U>T. Bandyopadhyay</U>, L. Sarcione. and F. Hover. <I><B>Sensors and Algorithms for Safe Navigation in Singapore Harbor.</B></I>
+Poster presented at CENSAM Workshop 2010, Singapore.
+<table>
+<tr> 
+<td><a href="./censamJan10SensorAlgoSafeNavig.pdf">[PDF]</a></td>
+<!-- <td><a href="./www/research/Marine/BanSarHov09.bib">[BibTeX]</a></td> -->
+</tr>
+</table>
+
+
+
+</li>
+</ul>
+
+
+
+
+
+
+</body>
+</html>

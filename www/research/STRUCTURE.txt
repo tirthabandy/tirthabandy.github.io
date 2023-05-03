@@ -1,0 +1,6 @@
+
+-- Each research field will have its own directory
+	-- papers + BibTeX 
+	-- videos + images
+	-- html page with the description of the work
+
